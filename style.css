@@ -1,0 +1,52 @@
+/* Le reset sert à enlever les marges et padding qu'ont naturellement les éléments d'une page */
+*,::before, ::after{
+    /* Prend en compte le remplissage des bordures dans le calcul des hauteur et largeur */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* Dégradé linéaire */
+    background-image: linear-gradient(to right, grey, black);
+    height: 100vh;
+}
+
+.container{
+    width: 100%;
+    min-height: 900px;
+    height: 100vh;
+}
+
+.eyes{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+.eye{
+    width: 240px;
+    /* Moitié de la largeur */
+    height: 120px;
+    /* Pour rendre une forme ronde (ici ovale grâce à la hauteur) */
+    border-radius: 50%;
+    background: white;
+    margin: 40px;
+    position: relative;
+    /* Pour cacher légèrement l'oeil sur les bordures */
+    overflow: hidden;
+}
+.ball{
+    width: 40px;
+    height: 40px;
+    background: black;
+    border-radius: 50%;
+    /* Pour centrer un élément en absolute on utilise la technique qui suit */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
